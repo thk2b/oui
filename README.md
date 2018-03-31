@@ -3,6 +3,14 @@ Open UI
 
 # principles
 
+`oui` focuses on the dynamic aspects of user interface. This means that we render plain HTML5 elements, and strive to apply as little changes to default styles.
+
+Developpers using this package can apply their own modifications to the styles by targetting HTML5 elements. For instance, to customize buttons add a stylesheet with `button { color: red; }`. To add padding to sections, `section { padding: 10px; }`. 
+
+This means that HTML5 semantic markup standards have to be carefully interpreted and respected.
+
+Overall, `oui` does the heavy lifting. It manages the layout and dynamic elements of the app, but remains unopinionated towards decoration, which ought to be left to brand-designers. 
+
 # index
 
 - `Grid` (`Container`,`Item`, `Area`)
