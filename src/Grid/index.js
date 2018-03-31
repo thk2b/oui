@@ -1,3 +1,7 @@
-export { default as Container } from './Container'
-export { default as Item } from './Item'
-export { default as Area } from './Area'
+import Container from './Container'
+import Item from './Item'
+import Area from './Area'
+
+export default {
+    Container, Item, Area
+}
