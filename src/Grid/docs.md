@@ -17,10 +17,10 @@ import {
 ```
 
 ## Components
-- [Grid.Container](gridcontainer)
-- [Grid.Dynamic](Grid.Dynamic)
-- [Grid.Item](Grid.Item)
-- [Grid.Area](Grid.Area)
+- [Grid.Container](#gridcontainer)
+- [Grid.Dynamic](#griddynamic)
+- [Grid.Item](#griditem)
+- [Grid.Area](#gridarea)
 
 ### Grid.Container
 
