@@ -13,42 +13,44 @@ const Container = styled.section`
 `
 
 const Box1 = styled.div`
-    background-color: palegreen;
     width: 100%;
     height: 100%;
-    border: 1px solid black;
 `
 
 const Box2 = styled(Box1)`
-    background-color: black;
+    background-color: palegreen;
 `
 
 export default class extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            sidebar: { width: 100 }
+            // store bounding box
+            box: { x: 100, y: 100, width: 500, height: 500 }
         }
     }
     render(){
-        const { sidebar } = this.state
-        return <Grid.Container
-            columns={`${sidebar.width}px 1fr`}
+        const { box } = this.state
+        return <Grid.Dynamic
+            columns={`${box.x}px ${box.width}px 1fr`}
+            rows={`${box.y}px ${box.height}px 1fr`}
             gap={0}
-            areas={[
-                'sidebar content'
-            ]}
+            areas={`
+                ". . ."
+                ". content ."
+                ". . ."
+            `}
         >
-            <Grid.Area sidebar >
-                <Resizable right
-                    width={{ min: 100, max: 200 }}
-                    onResize={({width}) => this.setState({
-                        sidebar: { width }
+            <Grid.Area content >
+                <Resizable top right bottom left
+                    width={{ min: 100 }}
+                    onResize={({ x, y, width, height }) => this.setState({
+                        box: { x, y, width, height }
                     })}
-                    Component={Box1}
+                    Component={Box2}
                 />
             </Grid.Area>
-            <Grid.Area content Component={Box2}/>
-        </Grid.Container>
+            <Grid.Area content Component={Box1}/>
+        </Grid.Dynamic>
     }   
 }

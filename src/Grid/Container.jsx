@@ -8,9 +8,7 @@ const Container = styled.div`
     grid-gap: ${props => props.gap}px;
     grid-template-columns: ${props => props.columns};
     grid-template-rows: ${props => props.rows};
-    grid-template-areas: ${props => props.areas.map(
-        area => '"' + area + '" '
-    )};
+    grid-template-areas: ${props => props.areas};
 `
 
 export default ({ className, style, children, ...props }) => <Container
