@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Item = styled.div`
-    grid-column: ${props => props.grid.column};
-    grid-row: ${props => props.grid.row};
-    grid-area: ${props => props.grid.area || props.area};
+    grid-column: ${props => props.column};
+    grid-row: ${props => props.row};
+    grid-area: ${props => props.area || props.area};
 `
 
-export default ({ grid={}, area, className, style, Component, children }) => <Item
-    grid={grid}
+export default ({ row, column, area, Component, children, ...props }) => <Item
+    row={row}
+    column={column}
     area={area}
-    className={className}
-    style={style}
+    {...props}
 >
     { children || <Component /> }
 </Item>

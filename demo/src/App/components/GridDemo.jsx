@@ -11,11 +11,11 @@ const Box = styled.section`
 export default ({}) => <Grid.Container
     columns='1fr minmax(20px, .25fr) 1fr'
     rows='1fr minmax(20px, .5fr) 1fr'
-    areas={[
-        'topLeft topMiddle topRight',
-        'middleLeft middleMiddle middleRight',
-        'bottom bottom bottom',
-    ]}
+    areas={`
+        "topLeft topMiddle topRight"
+        "middleLeft middleMiddle middleRight"
+        "bottom bottom bottom"
+    `}
 >
     <Grid.Area topLeft topMiddle
         Component={Box}

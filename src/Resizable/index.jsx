@@ -50,15 +50,16 @@ export default class Resizable extends React.Component {
     }
     render(){
         const {
-            Component, children, className, style={},
+            Component, children,
             top, right, bottom, left,
-            handleThickness=15
+            handleThickness=15,
+            ...rest
         } = this.props
         const positions = {
             top, right, bottom, left
         }
         return <ResizeContainer
-            className={className}
+            {...rest}
             ref={el => this.$el = findDOMNode(el)}
         >
             { children || <Component/>}

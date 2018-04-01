@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// import GridDemo from './components/GridDemo'
+import GridDemo from './components/GridDemo'
 import TripleSidebar from './components/ResizeDemo/TripleSidebar'
 import ResizeAllSides from './components/ResizeDemo/ResizeAllSidesDemo'
 import SimpleSidebar from './components/ResizeDemo/SimpleSidebarDemo'
