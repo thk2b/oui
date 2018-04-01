@@ -50,7 +50,7 @@ export default class Handle extends React.Component {
             : 'row-resize'
     }
     render(){
-        const { position, thickness=15 } = this.props
+        const { position, thickness } = this.props
         const Handle = Handles[position]
         return <Handle
             thickness={thickness}
