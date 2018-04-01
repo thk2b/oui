@@ -17,6 +17,11 @@ import {
 ```
 
 ## Components
+- [Grid.Container](Grid.Container)
+- [Grid.Dynamic](Grid.Dynamic)
+- [Grid.Item](Grid.Item)
+- [Grid.Area](Grid.Area)
+
 ### Grid.Container
 
 A Standard grid container that takes full width and height.
@@ -88,7 +93,7 @@ A grid Item to be rendered in an area of the parent grid.
 
 |prop|type|default|description| 
 |----|----|-------|-----------|
-|`[areaName]`|`Boolean`|`''`|the name of the first `true` prop will be set as `grid-area`|
+|`[areaName]`|`Boolean`|N/A|the name of the first `true` prop will be set as `grid-area`|
 |`children`|`React.Children`|`undefined`|children to be rendered|
 |`Component`|`React.Component`|`undefined`|Single component to be rendered without props|
 |`...props`|`*`|`{}`| any other props are attached to the container|
