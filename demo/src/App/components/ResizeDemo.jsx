@@ -12,11 +12,15 @@ const Container = styled.section`
     height: 100%;
 `
 
-const Box = styled.div`
+const Box1 = styled.div`
     background-color: palegreen;
     width: 100%;
     height: 100%;
     border: 1px solid black;
+`
+
+const Box2 = styled(Box1)`
+    background-color: black;
 `
 
 export default class extends React.Component {
@@ -41,10 +45,10 @@ export default class extends React.Component {
                     onResize={({width}) => this.setState({
                         sidebar: { width }
                     })}
-                    Component={Box}
+                    Component={Box1}
                 />
             </Grid.Area>
-            <Grid.Area content Component={Box}/>
+            <Grid.Area content Component={Box2}/>
         </Grid.Container>
     }   
 }
