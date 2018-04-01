@@ -11,7 +11,7 @@ import Resizable from 'oui/Resizable'
 
 |prop|type|default|description| 
 |----|----|-------|-----------|
-|`onResize`|`Function`|`undefined!`|called whenever the element is resized. The only argument passed to it is the element's new bounding box.|
+|`onResize`|`Function`|`undefined`|called whenever the element is resized. The only argument passed to it is the element's new bounding box.|
 |`width`|`Object`|`{min: 0, max: Infinity}`|the minimum and maximum pixel width of the element|
 |`height`|`Object`|`{min: 0, max: Infinity}`|the minimum and maximum pixel height of the element
 |`top`|`Boolean`|`false`|whether the top of the element is resizable|
