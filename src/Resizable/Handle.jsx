@@ -1,18 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ResizeHandle = styled.div`
+const BaseHandle = styled.div`
     position: absolute;
-    /* background-color: black; */
-    cursor: col-resize;
-    &:hover{
-        /* background-color:  */
-    }
 `
+const VerticalHandle = BaseHandle.extend`
+    top: 0;
+    bottom: 0;
+    width: ${props => props.thickness}px;
+    cursor: col-resize;
+`
+const HorizontalHandle = BaseHandle.extend`
+    right: 0;
+    left: 0;
+    height: ${props => props.thickness}px;
+    cursor: row-resize;  
+`
+
+const Handles = {
+    top: HorizontalHandle.extend`
+        top: ${props => props.thickness / -2}px;
+    `,
+    right: VerticalHandle.extend`
+        right: ${props => props.thickness / -2}px;
+    `,
+    bottom: HorizontalHandle.extend`
+        bottom: ${props => props.thickness / -2}px;
+    `,
+    left: VerticalHandle.extend`
+        left: ${props => props.thickness / -2}px;
+    `
+}
 
 export default class Handle extends React.Component {
     handleMouseDown(e){
-        const { position } = this.props
         const handleMouseMove = e => {
             this.props.onMouseMove(e)
         }
@@ -24,36 +45,15 @@ export default class Handle extends React.Component {
         window.addEventListener('mouseup', handleMouseUp)
         window.addEventListener('mousemove', handleMouseMove)
 
-        document.body.style.cursor = ['left', 'right'].includes(position)
+        document.body.style.cursor = ['left', 'right'].includes(this.props.position)
             ? 'col-resize'
             : 'row-resize'
     }
-    getStyles(position){
-        const { thickness } = this.props
-        const base = {
-            vertical: {
-                top: 0, bottom: 0,
-                cursor: 'col-resize',
-                width: thickness
-            },
-            horizontal: {
-                left: 0, right: 0,
-                cursor: 'row-resize',
-                height: thickness
-            }
-        }
-        const styles = {
-            top:    { top: -thickness/2, ...base.horizontal },
-            right:  { right: -thickness/2, ...base.vertical },
-            bottom: { bottom: -thickness/2, ...base.horizontal },
-            left:   { left: -thickness/2, ...base.vertical }
-        }
-        return styles[this.props.position]
-    }
     render(){
-        const { position } = this.props
-        return <ResizeHandle
-            style={this.getStyles()}
+        const { position, thickness=15 } = this.props
+        const Handle = Handles[position]
+        return <Handle
+            thickness={thickness}
             onMouseDown={e => this.handleMouseDown(e)}
         />
     }
