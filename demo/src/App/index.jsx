@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // import GridDemo from './components/GridDemo'
-import DoubleSidebar from './components/ResizeDemo/DoubleSidebar'
+import TripleSidebar from './components/ResizeDemo/TripleSidebar'
 import ResizeAllSides from './components/ResizeDemo/ResizeAllSidesDemo'
 import SimpleSidebar from './components/ResizeDemo/SimpleSidebarDemo'
 
@@ -17,7 +17,7 @@ const Main = styled.main`
 
 export default ({}) => <Main>
     {/* <GridDemo/> */}
-    {/* <DoubleSidebar /> */}
+    {/* <SimpleSidebar/> */}
+    <TripleSidebar />
     {/* <ResizeAllSides /> */}
-    <SimpleSidebar/>
 </Main>
