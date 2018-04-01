@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import GridDemo from './components/GridDemo'
-import ResizeDemo from './components/ResizeDemo'
+// import GridDemo from './components/GridDemo'
+import DoubleSidebar from './components/ResizeDemo/DoubleSidebar'
 
 const Main = styled.main`
     background-color: rgb(57, 57, 57);
@@ -15,5 +15,5 @@ const Main = styled.main`
 
 export default ({}) => <Main>
     {/* <GridDemo/> */}
-    <ResizeDemo />
+    <DoubleSidebar />
 </Main>
