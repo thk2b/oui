@@ -85,7 +85,7 @@ A grid Item to be rendered directly under a `Grid.Container` or `Grid.Dynamic`.
 
 #### Example
 
-### Grid.Item
+### Grid.Area
 
 A grid Item to be rendered in an area of the parent grid.
 
