@@ -49,18 +49,24 @@ export default class Resizable extends React.Component {
         this.setState(nextDimentions)
     }
     render(){
-        const { Compoent, children, top, right, bottom, left } = this.props
+        const {
+            Component, children, className, style={},
+            top, right, bottom, left,
+            handleThickness=15
+        } = this.props
         const positions = {
             top, right, bottom, left
         }
         const { width, height } = this.state
         return <ResizeContainer
-            style={{ width, height }}
+            style={{ width, height, ...style.root }}
+            className={className}
             ref={el => this.$el = findDOMNode(el)}
         >
-            { children || <Component />}
+            { children || <Component/>}
             {Object.entries(positions).map(
                 ([position, isResizable]) => isResizable && <Handle
+                    thickness={handleThickness}
                     key={position}
                     position={position}
                     onMouseMove={e => this.handleHandleDrag(e, position)}

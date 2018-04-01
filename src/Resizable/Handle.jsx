@@ -3,8 +3,11 @@ import styled from 'styled-components'
 
 const ResizeHandle = styled.div`
     position: absolute;
-    background-color: black;
+    /* background-color: black; */
     cursor: col-resize;
+    &:hover{
+        /* background-color:  */
+    }
 `
 
 export default class Handle extends React.Component {
@@ -26,7 +29,7 @@ export default class Handle extends React.Component {
             : 'row-resize'
     }
     getStyles(position){
-        const thickness = '2px'
+        const { thickness } = this.props
         const base = {
             vertical: {
                 top: 0, bottom: 0,
@@ -40,10 +43,10 @@ export default class Handle extends React.Component {
             }
         }
         const styles = {
-            top:    { top: 0, ...base.horizontal },
-            right:  { right: 0, ...base.vertical },
-            bottom: { bottom: 0, ...base.horizontal },
-            left:   { left: 0, ...base.vertical }
+            top:    { top: -thickness/2, ...base.horizontal },
+            right:  { right: -thickness/2, ...base.vertical },
+            bottom: { bottom: -thickness/2, ...base.horizontal },
+            left:   { left: -thickness/2, ...base.vertical }
         }
         return styles[this.props.position]
     }
