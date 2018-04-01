@@ -17,7 +17,7 @@ import {
 ```
 
 ## Components
-- [Grid.Container](Grid.Container)
+- [Grid.Container](gridcontainer)
 - [Grid.Dynamic](Grid.Dynamic)
 - [Grid.Item](Grid.Item)
 - [Grid.Area](Grid.Area)
