@@ -8,29 +8,29 @@ const { min, max } = Math
 
 const ResizeContainer = styled.div`
     position: relative;
+    height: 100%;
+    width: 100%;
 `
 
 export default class Resizable extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            width: props.width.default,
-            height: props.height.default
-        }
         this.$el = null
+        this.prevDimentions = { width: null, height: null }
     }
-    validateHeight(nextHeight){
+    validateHeight(h){
         const { height } = this.props
-        return min(max(height.min, nextHeight), height.max)
+        if(!height) return h
+        return min(max(height.min, h), height.max)   
     }
-    validateWidth(nextWidth){
+    validateWidth(w){
         const { width } = this.props
-        return min(max(width.min, nextWidth), width.max)
+        if(!width) return w
+        return min(max(width.min, w), width.max)  
     }
     handleHandleDrag(e, position){
-        
         const rect = this.$el.getBoundingClientRect()
-        const nextDimentions = this.state
+        const nextDimentions = this.prevDimentions
         if (position === 'top') {
             // how far the mouse moved from the relevant edge of the box
             const delta = rect.y - e.clientY
@@ -46,7 +46,7 @@ export default class Resizable extends React.Component {
             nextDimentions.width = this.validateWidth(rect.width + delta)
         }
         this.props.onResize&&this.props.onResize(nextDimentions)
-        this.setState(nextDimentions)
+        this.prevDimentions = nextDimentions
     }
     render(){
         const {
@@ -57,9 +57,7 @@ export default class Resizable extends React.Component {
         const positions = {
             top, right, bottom, left
         }
-        const { width, height } = this.state
         return <ResizeContainer
-            style={{ width, height, ...style.root }}
             className={className}
             ref={el => this.$el = findDOMNode(el)}
         >

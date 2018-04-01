@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import Resizable from '../../../../lib/Resizable'
 
+import Grid from '../../../../lib/Grid'
+
 const Container = styled.section`
     display: flex;
     align-items: center;
@@ -15,21 +17,34 @@ const Box = styled.div`
     width: 100%;
     height: 100%;
     border: 1px solid black;
-    border-radius: 5px;
 `
 
 export default class extends React.Component {
-    render(){
-        return <Container>
-            <Resizable top right bottom left
-                width={{
-                    min: 100, default: 200, max: 400
-                }}
-                height={{
-                    min: 50, default: 100, max: 200 
-                }}
-                Component={Box}
-            />
-        </Container>
+    constructor(props){
+        super(props)
+        this.state = {
+            sidebar: { width: 100 }
+        }
     }
+    render(){
+        const { sidebar } = this.state
+        return <Grid.Container
+            columns={`${sidebar.width}px 1fr`}
+            gap={0}
+            areas={[
+                'sidebar content'
+            ]}
+        >
+            <Grid.Area sidebar >
+                <Resizable right
+                    width={{ min: 100, max: 200 }}
+                    onResize={({width}) => this.setState({
+                        sidebar: { width }
+                    })}
+                    Component={Box}
+                />
+            </Grid.Area>
+            <Grid.Area content Component={Box}/>
+        </Grid.Container>
+    }   
 }
