@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Resizable from '../../../../lib/Resizable'
+import Resizable from '../../../../../lib/Resizable'
 
-import Grid from '../../../../lib/Grid'
+import Grid from '../../../../../lib/Grid'
 
 const Container = styled.section`
     display: flex;
