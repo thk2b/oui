@@ -68,23 +68,17 @@ export default class extends React.Component {
                         onClick={e => this.setState({
                             sidebar1: {...sidebar1, open: true}
                         })}
-                    >
-                        open sidebar1
-                    </button>}
+                    >open sidebar1</button>}
                     {!sidebar2.open && <button
                         onClick={e => this.setState({
                             sidebar2: {...sidebar2, open: true}
                         })}
-                    >
-                        open sidebar2
-                    </button>}
+                    >open sidebar2</button>}
                     {!sidebar3.open && <button
                         onClick={e => this.setState({
                             sidebar3: {...sidebar3, open: true}
                         })}
-                    >
-                        open sidebar3
-                    </button>}
+                    >open sidebar3</button>}
                 </Nav>
             </Grid.Area>
             {sidebar1.open && <Grid.Area sidebar1 >
