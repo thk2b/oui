@@ -62,3 +62,38 @@ All grid-related styles are passed inline for efficient dynamic updates. Use thi
 
 #### Example
 see `demo/ResizeDemo/TripleSidebar`
+
+### Grid.Item
+
+A grid Item to be rendered directly under a `Grid.Container` or `Grid.Dynamic`.
+
+#### Props
+
+|prop|type|default|description| 
+|----|----|-------|-----------|
+|`row`|`String`|`''`|the value of `grid-row`|
+|`column`|`String`|`''`|the value of `grid-column`|
+|`area`|`String`|`''`|the value of `grid-area`|
+|`children`|`React.Children`|`undefined`|children to be rendered|
+|`Component`|`React.Component`|`undefined`|Single component to be rendered without props|
+|`...props`|`*`|`{}`| any other props are attached to the container|
+
+#### Example
+
+### Grid.Item
+
+A grid Item to be rendered in an area of the parent grid.
+
+#### Props
+
+|prop|type|default|description| 
+|----|----|-------|-----------|
+|`[areaName]`|`Boolean`|`''`|the name of the first `true` prop will be set as `grid-area`|
+|`children`|`React.Children`|`undefined`|children to be rendered|
+|`Component`|`React.Component`|`undefined`|Single component to be rendered without props|
+|`...props`|`*`|`{}`| any other props are attached to the container|
+
+#### Example
+```js
+<Grid.Area myArea Component={MyComponent} />
+```
