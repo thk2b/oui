@@ -1,5 +1,5 @@
 {
-  "name": "oui",
+  "name": "@thk2b/oui",
   "version": "0.0.0",
   "description": "An unopinionated UI library",
   "main": "src/index.js",
