@@ -2,7 +2,7 @@
 Open UI
 
 # scope
-`oui` focuses on the dynamic aspects of user interface. This means that we render plain HTML5 elements, and strive to apply as little changes to default styles.
+`oui` focuses on the dynamic aspects of user interface. This means that we render plain HTML5 elements, and strive to apply no styling to elements. Styling should be done at the level of individual applications. `oui` only provides structural components.
 
 Developpers using this package can apply their own modifications to the styles by targetting HTML5 elements. For instance, to customize buttons add a stylesheet with `button { color: red; }`. To add padding to sections, `section { padding: 10px; }`. 
 
