@@ -69,9 +69,11 @@ export default class PopoverDemo extends React.Component{
                     left: this.state.left,
                     bottom: this.state.bottom
                 }}
-                // Component={() => <button>open/close</button>}
-                OpenComponent={() => <button>close</button>}
-                ClosedComponent={() => <button>open</button>}
+                Component={() => <button
+                    style={{ width:'300px'}}
+                >open/close</button>}
+                // OpenComponent={() => <button>close</button>}
+                // ClosedComponent={() => <button>open</button>}
             >
                 <Menu>
                     <p>hi</p>
