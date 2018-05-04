@@ -25,7 +25,7 @@ export default class Popover extends React.Component {
         })
     }
     render(){
-        const { Component } = this.props
+        const { Component, zIndex } = this.props
         const OpenComponent = Component || this.props.OpenComponent
         const ClosedComponent = Component || this.props.ClosedComponent
 
@@ -35,7 +35,7 @@ export default class Popover extends React.Component {
                     <OpenComponent />
                 </div>
                 <InnerContainer
-                    style={this.props.position}
+                    style={{...this.props.position, zIndex}}
                 >
                     {this.props.children}
                 </InnerContainer>
