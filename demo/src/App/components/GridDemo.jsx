@@ -18,6 +18,7 @@ export default ({}) => <Grid.Container
     `}
 >
     <Grid.Area topLeft topMiddle
+        style={{ border: '1px solid red' }}
         Component={Box}
     />
     <Grid.Area topRight
