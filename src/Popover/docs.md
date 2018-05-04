@@ -12,8 +12,9 @@ import { Popover } from 'oui'
 
 |prop|type|default|description| 
 |----|----|-------|-----------|
-|OpenComponent|React.Component|`undefined`!|The component to render when the popover is open|
-|CloseComponent|React.Component|`undefined`!|The component to render when the popover is open|
+|Component|React.Component|`undefined`|The component to render in all states of the popover, when no OpenComponent or ClosedComponent is provided|
+|OpenComponent|React.Component|`undefined`|The component to render when the popover is open|
+|CloseComponent|React.Component|`undefined`|The component to render when the popover is open|
 |position|Object|`undefined`!|The `top`, `right`,`bottom`, `left` position of the absolutely positionned container containning the `children`, relative to `OpenConponent`|
 
 ## Example

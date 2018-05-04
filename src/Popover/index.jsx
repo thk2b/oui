@@ -25,7 +25,10 @@ export default class Popover extends React.Component {
         })
     }
     render(){
-        const { OpenComponent, ClosedComponent } = this.props
+        const { Component } = this.props
+        const OpenComponent = Component || this.props.OpenComponent
+        const ClosedComponent = Component || this.props.ClosedComponent
+
         if(this.state.isOpen){
             return <OuterContainer>
                 <div onClick={e => this.setState({ isOpen: false })}>
