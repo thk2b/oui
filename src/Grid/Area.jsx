@@ -13,6 +13,7 @@ export default (props) => {
     return <Item
         area={area}
         style={props.style}
+        className={props.className}
     >
         {props.children || <props.Component />}
     </Item>

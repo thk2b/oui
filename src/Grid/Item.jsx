@@ -7,11 +7,12 @@ const Item = styled.div`
     grid-area: ${props => props.area || props.area};
 `
 
-export default ({ row, column, area, Component, children, ...props }) => <Item
+export default ({ row, column, area, Component, children, style, className }) => <Item
     row={row}
     column={column}
     area={area}
-    {...props}
+    style={style}
+    className={className}
 >
     { children || <Component /> }
 </Item>
