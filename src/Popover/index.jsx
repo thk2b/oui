@@ -13,8 +13,29 @@ export default class Popover extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            isOpen: false
+            isOpen: false,
         }
+        this.didOpen = false // whether the popover was just opened
+        this.$el = null
+    }
+    componentDidMount(){
+        document.addEventListener('click', this.handleOutsideClick.bind(this))
+    }
+    componentWillUnmount(){
+        document.removeEventListener('click', this.handleOutsideClick.bind(this))
+    }
+    handleOutsideClick(e){
+        if(this.didOpen){
+            this.didOpen = false
+            return
+        }
+        if(this.state.isOpen && !this.$el.contains(e.target)){
+            this.setState({ isOpen: false })
+        }
+    }
+    handleOpen(e){
+        this.setState({ isOpen: true });
+        this.didOpen = true;
     }
     validatePosition(position){
         const validPositions = ['top', 'right', 'bottom', 'left']
@@ -36,6 +57,7 @@ export default class Popover extends React.Component {
                 </div>
                 <InnerContainer
                     style={{...this.props.position, zIndex}}
+                    innerRef={el => this.$el = el}
                 >
                     {this.props.children}
                 </InnerContainer>
@@ -43,7 +65,7 @@ export default class Popover extends React.Component {
         }
 
         return <div>
-            <div onClick={e => this.setState({ isOpen: true })}>
+            <div onClick={e => this.handleOpen(e)}>
                 <ClosedComponent/>
             </div>
         </div>
