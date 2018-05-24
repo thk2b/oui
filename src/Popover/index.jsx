@@ -29,7 +29,7 @@ export default class Popover extends React.Component {
             this.didOpen = false
             return
         }
-        if(this.state.isOpen && !this.$el.contains(e.target)){
+        if(this.state.isOpen && this.el && !this.$el.contains(e.target)){
             this.setState({ isOpen: false })
         }
     }
