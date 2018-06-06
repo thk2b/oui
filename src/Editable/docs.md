@@ -20,6 +20,8 @@ import Editable from 'oui/Editable'
 |DeleteButton|Component|`undefined`|rendered when the user hovers the component, only if the `onDelete` prop is provided. Should convey that the value will be deleted|
 |SubmitButton|Component|`undefined`|rendered when the component is in the `editing` state. Should convey that the value will be saved|
 |CancelButton|Component|`undefined`|rendered when the component is in the `editing` state. Should convey that the value will be discarded|
+|className|string|`undefined`|a className to be attached to the outter component|
+|styles|object|`undefined`|a style object to be passed to the outter component|
 
 #### Example
 see `demo/EditableDemo`

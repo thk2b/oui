@@ -55,7 +55,7 @@ export default class Editable extends React.Component {
 
     render(){
         const { value, editing, hovering } = this.state
-        const { value: initialValue, As, With } = this.props
+        const { value: initialValue, As, With, className, styles } = this.props
 
         const SubmitButton = this.props.SubmitButton
         const CancelButton = this.props.CancelButton
@@ -63,7 +63,7 @@ export default class Editable extends React.Component {
         const EditButton = this.props.EditButton
 
         if(editing) return (
-            <Container>
+            <Container className={className} styles={styles}>
                 <With
                     value={value}
                     onChange={e => this.handleChange(e)}
@@ -80,6 +80,7 @@ export default class Editable extends React.Component {
 
         else return ( 
             <Container
+                className={className} style={styles}
                 onMouseEnter={e => this.handleMouseEnter(e)}
                 onMouseLeave={e => this.handleMouseLeave(e)}
             >
