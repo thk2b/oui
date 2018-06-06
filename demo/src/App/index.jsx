@@ -5,7 +5,9 @@ import styled from 'styled-components'
 // import TripleSidebar from './components/ResizeDemo/TripleSidebar'
 // import ResizeAllSides from './components/ResizeDemo/ResizeAllSidesDemo'
 // import SimpleSidebar from './components/ResizeDemo/SimpleSidebarDemo'
-import PopoverDemo from './components/PopoverDemo'
+// import PopoverDemo from './components/PopoverDemo'
+import EditableDemo from './components/EditableDemo'
+
 
 const Main = styled.main`
     background-color: rgb(57, 57, 57);
@@ -17,8 +19,9 @@ const Main = styled.main`
 `
 
 export default ({}) => <Main>
+    <EditableDemo />
     {/* <GridDemo/> */}
-    <PopoverDemo />
+    {/* <PopoverDemo /> */}
     {/* <SimpleSidebar/> */}
     {/* <TripleSidebar /> */}
     {/* <ResizeAllSides /> */}
