@@ -1,4 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    display: flex;
+    flex-flow: row-nowrap;
+    align-items: stretch;
+`
 
 export default class Editable extends React.Component {
     constructor(props){
@@ -56,7 +63,7 @@ export default class Editable extends React.Component {
         const EditButton = this.props.EditButton
 
         if(editing) return (
-            <div>
+            <Container>
                 <With
                     value={value}
                     onChange={e => this.handleChange(e)}
@@ -68,11 +75,11 @@ export default class Editable extends React.Component {
                 {CancelButton&&<CancelButton
                     onClick={e => this.handleCancel(e)}
                 />}
-            </div>
+            </Container>
         )
 
         else return ( 
-            <div
+            <Container
                 onMouseEnter={e => this.handleMouseEnter(e)}
                 onMouseLeave={e => this.handleMouseLeave(e)}
             >
@@ -81,7 +88,7 @@ export default class Editable extends React.Component {
                     {EditButton&&<EditButton onClick={e => this.handleEditStart(e)}/>}
                     {DeleteButton&&<DeleteButton onClick={e => this.handleDelete(e)}/>}
                 </React.Fragment>}
-            </div>
+            </Container>
         )
     }
 }
