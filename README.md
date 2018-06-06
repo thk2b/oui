@@ -21,5 +21,8 @@ Overall, `oui` manages the layout and dynamic elements of the app, but remains u
 - Popover ([Docs](https://github.com/thk2b/oui/blob/master/src/Popover/docs.md))
   A popover component that renders its children only if the component has been clicked.
 
-- Resiable ([Docs]( https://github.com/thk2b/oui/blob/master/src/Resizable/docs.md))
+- Resizable ([Docs]( https://github.com/thk2b/oui/blob/master/src/Resizable/docs.md))
   A component that makes another component resizable.
+  
+- Editable ([Docs]( https://github.com/thk2b/oui/blob/master/src/Editable/docs.md))
+  Displays a value and allows the user to edit it.
